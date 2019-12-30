@@ -12,8 +12,9 @@
 		638218A123BA3E8400346B11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638218A023BA3E8400346B11 /* ViewController.swift */; };
 		638218A423BA3E8400346B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638218A223BA3E8400346B11 /* Main.storyboard */; };
 		638218A623BA3E8500346B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638218A523BA3E8500346B11 /* Assets.xcassets */; };
-		638218A923BA3E8500346B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638218A723BA3E8500346B11 /* LaunchScreen.storyboard */; };
 		638218B423BA3E8600346B11 /* LeBaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638218B323BA3E8600346B11 /* LeBaluchonTests.swift */; };
+		63BD64F723BA81C8008937AB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63BD64F623BA81C8008937AB /* .swiftlint.yml */; };
+		63BD64F823BA81C8008937AB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63BD64F623BA81C8008937AB /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,11 +34,11 @@
 		638218A023BA3E8400346B11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		638218A323BA3E8400346B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		638218A523BA3E8500346B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		638218A823BA3E8500346B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		638218AA23BA3E8500346B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		638218AF23BA3E8600346B11 /* LeBaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBaluchonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		638218B323BA3E8600346B11 /* LeBaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBaluchonTests.swift; sourceTree = "<group>"; };
 		638218B523BA3E8600346B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63BD64F623BA81C8008937AB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +59,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		636778CF23BA6E0F0010D0B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				638218A223BA3E8400346B11 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		636778D023BA6E190010D0B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				638218A023BA3E8400346B11 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		636778D123BA6E270010D0B9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				6382189C23BA3E8400346B11 /* AppDelegate.swift */,
+				6382189E23BA3E8400346B11 /* SceneDelegate.swift */,
+				638218AA23BA3E8500346B11 /* Info.plist */,
+				638218A523BA3E8500346B11 /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		636778D223BA6E510010D0B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6382189023BA3E8400346B11 = {
 			isa = PBXGroup;
 			children = (
 				6382189B23BA3E8400346B11 /* LeBaluchon */,
 				638218B223BA3E8600346B11 /* LeBaluchonTests */,
 				6382189A23BA3E8400346B11 /* Products */,
+				63BD64F623BA81C8008937AB /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +115,10 @@
 		6382189B23BA3E8400346B11 /* LeBaluchon */ = {
 			isa = PBXGroup;
 			children = (
-				6382189C23BA3E8400346B11 /* AppDelegate.swift */,
-				6382189E23BA3E8400346B11 /* SceneDelegate.swift */,
-				638218A023BA3E8400346B11 /* ViewController.swift */,
-				638218A223BA3E8400346B11 /* Main.storyboard */,
-				638218A523BA3E8500346B11 /* Assets.xcassets */,
-				638218A723BA3E8500346B11 /* LaunchScreen.storyboard */,
-				638218AA23BA3E8500346B11 /* Info.plist */,
+				636778D223BA6E510010D0B9 /* Model */,
+				636778CF23BA6E0F0010D0B9 /* View */,
+				636778D023BA6E190010D0B9 /* Controller */,
+				636778D123BA6E270010D0B9 /* Support */,
 			);
 			path = LeBaluchon;
 			sourceTree = "<group>";
@@ -109,6 +142,7 @@
 				6382189523BA3E8400346B11 /* Sources */,
 				6382189623BA3E8400346B11 /* Frameworks */,
 				6382189723BA3E8400346B11 /* Resources */,
+				63BD64F523BA8166008937AB /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -180,7 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				638218A923BA3E8500346B11 /* LaunchScreen.storyboard in Resources */,
+				63BD64F723BA81C8008937AB /* .swiftlint.yml in Resources */,
 				638218A623BA3E8500346B11 /* Assets.xcassets in Resources */,
 				638218A423BA3E8400346B11 /* Main.storyboard in Resources */,
 			);
@@ -190,10 +224,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BD64F823BA81C8008937AB /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63BD64F523BA8166008937AB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6382189523BA3E8400346B11 /* Sources */ = {
@@ -231,14 +287,6 @@
 				638218A323BA3E8400346B11 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		638218A723BA3E8500346B11 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				638218A823BA3E8500346B11 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -364,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6P9G69HDM7;
-				INFOPLIST_FILE = LeBaluchon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchon/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidchea.LeBaluchon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,7 +430,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6P9G69HDM7;
-				INFOPLIST_FILE = LeBaluchon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LeBaluchon/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidchea.LeBaluchon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
