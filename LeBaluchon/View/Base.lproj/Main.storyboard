@@ -10,7 +10,7 @@
         <!--Taux de change-->
         <scene sceneID="4Vf-Js-9OM">
             <objects>
-                <viewController id="TGy-Om-gL7" sceneMemberID="viewController">
+                <viewController id="TGy-Om-gL7" customClass="RateViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hxZ-HD-MT5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,10 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nK8-Pp-VsV">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                                <connections>
+                                                    <action selector="euroEditing" destination="TGy-Om-gL7" eventType="editingChanged" id="JOg-YF-WDz"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtK-Qa-8yR">
                                                 <rect key="frame" x="138" y="0.0" width="22" height="34"/>
@@ -48,6 +51,7 @@
                                         <subviews>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MV-5j-keq">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="34"/>
+                                                <color key="textColor" red="0.4823529411764706" green="0.40392156862745099" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
@@ -65,15 +69,20 @@
                                 </constraints>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-2s-6zi">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.86274509803921573" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="centerY" secondItem="hxZ-HD-MT5" secondAttribute="centerY" id="0jt-pt-ikQ"/>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="centerX" secondItem="hxZ-HD-MT5" secondAttribute="centerX" id="6TQ-yF-Cu9"/>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="width" secondItem="fvf-N2-TaA" secondAttribute="width" multiplier="0.5" id="AmU-0u-GHo"/>
+                            <constraint firstItem="Cdg-2s-6zi" firstAttribute="centerY" secondItem="hxZ-HD-MT5" secondAttribute="centerY" id="DiB-dT-T4o"/>
                             <constraint firstItem="twJ-da-si6" firstAttribute="top" secondItem="fvf-N2-TaA" secondAttribute="top" constant="20" id="F2q-vt-MwK"/>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="top" secondItem="twJ-da-si6" secondAttribute="bottom" constant="70" id="IPc-Xf-0C9"/>
                             <constraint firstItem="twJ-da-si6" firstAttribute="centerX" secondItem="hxZ-HD-MT5" secondAttribute="centerX" id="hRw-lN-i3E"/>
+                            <constraint firstItem="Cdg-2s-6zi" firstAttribute="centerX" secondItem="hxZ-HD-MT5" secondAttribute="centerX" id="sxn-I4-QBf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fvf-N2-TaA"/>
                         <variation key="default">
@@ -94,6 +103,11 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Taux de change" image="eurosign.square" catalog="system" id="k6y-5J-cgC"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="Cdg-2s-6zi" id="gcF-Pt-1Ew"/>
+                        <outlet property="dollarTextField" destination="9MV-5j-keq" id="A0e-QT-v7g"/>
+                        <outlet property="euroTextField" destination="nK8-Pp-VsV" id="5tz-wp-NoR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bY6-6W-fK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,7 +163,7 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2q7-gw-i6P">
                                                 <rect key="frame" x="0.0" y="25.5" width="256" height="75.5"/>
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.4823529411764706" green="0.40392156862745099" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <userDefinedRuntimeAttributes>
@@ -288,7 +302,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.48237605540304707" green="0.40198572812282418" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.4823529411764706" green="0.40392156862745099" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="TGy-Om-gL7" kind="relationship" relationship="viewControllers" id="Hx1-r3-QU2"/>
