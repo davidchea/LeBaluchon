@@ -15,8 +15,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="HMT-JJ-COl">
-                                <rect key="frame" x="80" y="232" width="160" height="104"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez une valeur en euro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-da-si6">
+                                <rect key="frame" x="31" y="20" width="258" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HMT-JJ-COl">
+                                <rect key="frame" x="80" y="240" width="160" height="88"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RSs-vc-OBZ">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="34"/>
@@ -24,7 +30,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nK8-Pp-VsV">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtK-Qa-8yR">
                                                 <rect key="frame" x="138" y="0.0" width="22" height="34"/>
@@ -38,9 +44,9 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kOZ-r4-h7c">
-                                        <rect key="frame" x="0.0" y="70" width="160" height="34"/>
+                                        <rect key="frame" x="0.0" y="54" width="160" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MV-5j-keq">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MV-5j-keq">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -57,24 +63,35 @@
                                 <constraints>
                                     <constraint firstItem="9MV-5j-keq" firstAttribute="width" secondItem="nK8-Pp-VsV" secondAttribute="width" id="up5-wb-KZB"/>
                                 </constraints>
+                                <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taux de change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twJ-da-si6">
-                                <rect key="frame" x="78.5" y="20" width="163" height="23"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.86274509803921573" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="HMT-JJ-COl" firstAttribute="centerY" secondItem="hxZ-HD-MT5" secondAttribute="centerY" id="0jt-pt-ikQ"/>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="centerX" secondItem="hxZ-HD-MT5" secondAttribute="centerX" id="6TQ-yF-Cu9"/>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="width" secondItem="fvf-N2-TaA" secondAttribute="width" multiplier="0.5" id="AmU-0u-GHo"/>
-                            <constraint firstItem="HMT-JJ-COl" firstAttribute="height" secondItem="fvf-N2-TaA" secondAttribute="height" multiplier="0.2" id="DSq-1h-kLb"/>
                             <constraint firstItem="twJ-da-si6" firstAttribute="top" secondItem="fvf-N2-TaA" secondAttribute="top" constant="20" id="F2q-vt-MwK"/>
-                            <constraint firstItem="HMT-JJ-COl" firstAttribute="centerY" secondItem="hxZ-HD-MT5" secondAttribute="centerY" id="Wco-Qm-m8m"/>
+                            <constraint firstItem="HMT-JJ-COl" firstAttribute="top" secondItem="twJ-da-si6" secondAttribute="bottom" constant="70" id="IPc-Xf-0C9"/>
                             <constraint firstItem="twJ-da-si6" firstAttribute="centerX" secondItem="hxZ-HD-MT5" secondAttribute="centerX" id="hRw-lN-i3E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fvf-N2-TaA"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0jt-pt-ikQ"/>
+                                <exclude reference="IPc-Xf-0C9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="IPc-Xf-0C9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="0jt-pt-ikQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Taux de change" image="eurosign.square" catalog="system" id="k6y-5J-cgC"/>
                 </viewController>
@@ -90,14 +107,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfz-FL-zw4">
-                                <rect key="frame" x="103.5" y="20" width="113.5" height="23"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez une phrase en français" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfz-FL-zw4">
+                                <rect key="frame" x="12" y="20" width="296" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Oke-B2-EGI">
-                                <rect key="frame" x="32" y="83" width="256" height="207.5"/>
+                                <rect key="frame" x="32" y="121.5" width="256" height="207.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="31g-z4-Oht">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="101.5"/>
@@ -113,7 +130,7 @@
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                 </userDefinedRuntimeAttributes>
@@ -142,18 +159,38 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <variation key="heightClass=compact" axis="horizontal" spacing="20"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.86274509803921573" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Pfz-FL-zw4" firstAttribute="centerX" secondItem="mxw-tk-MxT" secondAttribute="centerX" id="07Q-l0-9bs"/>
-                            <constraint firstItem="Oke-B2-EGI" firstAttribute="top" secondItem="Pfz-FL-zw4" secondAttribute="bottom" constant="40" id="GUb-4j-fZ2"/>
+                            <constraint firstItem="Oke-B2-EGI" firstAttribute="height" secondItem="fRy-7P-daC" secondAttribute="height" multiplier="0.3" id="2aI-Qo-e6f"/>
                             <constraint firstItem="Oke-B2-EGI" firstAttribute="height" secondItem="fRy-7P-daC" secondAttribute="height" multiplier="0.4" id="LUR-At-75S"/>
                             <constraint firstItem="Oke-B2-EGI" firstAttribute="centerX" secondItem="mxw-tk-MxT" secondAttribute="centerX" id="O2P-90-sxY"/>
+                            <constraint firstItem="Oke-B2-EGI" firstAttribute="top" secondItem="Pfz-FL-zw4" secondAttribute="bottom" constant="80" id="ZFl-nl-dhy">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="Oke-B2-EGI" firstAttribute="width" secondItem="fRy-7P-daC" secondAttribute="width" multiplier="0.8" id="evK-b6-zQ0"/>
                             <constraint firstItem="Pfz-FL-zw4" firstAttribute="top" secondItem="fRy-7P-daC" secondAttribute="top" constant="20" id="mks-Lc-XGr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fRy-7P-daC"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2aI-Qo-e6f"/>
+                                <exclude reference="LUR-At-75S"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="2aI-Qo-e6f"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="LUR-At-75S"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Traduction" image="text.bubble" catalog="system" id="Vqg-Ws-3Tz"/>
                 </viewController>
@@ -170,13 +207,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Météo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cM-Jh-c96">
-                                <rect key="frame" x="130.5" y="20" width="59" height="23"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
+                                <rect key="frame" x="132.5" y="20" width="55.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zU2-4E-U7C">
-                                <rect key="frame" x="114" y="197.5" width="92" height="173"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="zU2-4E-U7C">
+                                <rect key="frame" x="114" y="172.5" width="92" height="223"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LmA-ro-uaf">
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="61.5"/>
@@ -202,7 +239,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NI3-7U-IY5">
-                                        <rect key="frame" x="0.0" y="111.5" width="92" height="61.5"/>
+                                        <rect key="frame" x="0.0" y="161.5" width="92" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8J-mX-MH7">
                                                 <rect key="frame" x="24" y="0.0" width="44" height="20.5"/>
@@ -225,6 +262,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <variation key="heightClass=compact" axis="horizontal" spacing="150"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.86274509803921573" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
