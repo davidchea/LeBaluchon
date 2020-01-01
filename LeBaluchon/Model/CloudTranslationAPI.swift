@@ -18,7 +18,7 @@ class CloudTranslationAPI: API {
     
     // MARK: - Method
     
-    func getTranslationToEnglish(_ text: String, completionHandler: @escaping (String) -> Void) {
+    func getTranslationToEnglish(_ text: String, completionHandler: @escaping (String, String) -> Void) {
         cancelAllTasks()
         
         // Replace all the spaces by encoding percents in the URL
@@ -27,12 +27,12 @@ class CloudTranslationAPI: API {
         
         Alamofire.request(percentEncodingEndpoint).responseJSON { dataResponse in
             guard dataResponse.error == nil else {
-                completionHandler("")
+                completionHandler("", dataResponse.error!.localizedDescription)
                 return
             }
             
             let json = try! JSON(data: dataResponse.data!)
-            completionHandler(json["data"]["translations"][0]["translatedText"].stringValue)
+            completionHandler(json["data"]["translations"][0]["translatedText"].stringValue, "")
         }
     }
 }

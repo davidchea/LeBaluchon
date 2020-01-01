@@ -17,7 +17,12 @@ class TranslationViewController: UIViewController {
     
     // MARK: - Method
     
-    private func updateEnglishTextField(_ translatedText: String) {
+    private func updateEnglishTextField(translatedText: String, error: String) {
+        guard error == "" else {
+            presentErrorAlert(message: error)
+            return
+        }
+        
         englishTextField.text = translatedText
     }
 }
@@ -27,6 +32,6 @@ extension TranslationViewController: UITextViewDelegate {
     // MARK: - Delegate method
     
     func textViewDidChange(_ textView: UITextView) {
-        CloudTranslationAPI.shared.getTranslationToEnglish(textView.text, completionHandler: updateEnglishTextField(_:))
+        CloudTranslationAPI.shared.getTranslationToEnglish(textView.text, completionHandler: updateEnglishTextField(translatedText:error:))
     }
 }
