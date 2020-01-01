@@ -9,7 +9,7 @@
 import Alamofire
 import SwiftyJSON
 
-struct FixerAPI {
+class FixerAPI: API {
     
     // MARK: - Properties
     
@@ -18,15 +18,17 @@ struct FixerAPI {
     
     // MARK: - Method
     
-    func getRateFromEuroToDollar(_ completion: @escaping (Double) -> Void) {
-        Alamofire.request(rateFromEuroToDollarEndpoint).responseJSON { response in
-            guard response.error == nil else {
-                completion(0)
+    func getRateFromEuroToDollar(completionHandler: @escaping (Double) -> Void) {
+        cancelAllTasks()
+        
+        Alamofire.request(rateFromEuroToDollarEndpoint).responseJSON { dataResponse in
+            guard dataResponse.error == nil else {
+                completionHandler(0)
                 return
             }
             
-            let json = try! JSON(data: response.data!)
-            completion(json["rates"]["USD"].doubleValue)
+            let json = try! JSON(data: dataResponse.data!)
+            completionHandler(json["rates"]["USD"].doubleValue)
         }
     }
 }

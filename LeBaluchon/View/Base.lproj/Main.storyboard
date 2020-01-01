@@ -69,20 +69,15 @@
                                 </constraints>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-2s-6zi">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.86274509803921573" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="centerY" secondItem="hxZ-HD-MT5" secondAttribute="centerY" id="0jt-pt-ikQ"/>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="centerX" secondItem="hxZ-HD-MT5" secondAttribute="centerX" id="6TQ-yF-Cu9"/>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="width" secondItem="fvf-N2-TaA" secondAttribute="width" multiplier="0.5" id="AmU-0u-GHo"/>
-                            <constraint firstItem="Cdg-2s-6zi" firstAttribute="centerY" secondItem="hxZ-HD-MT5" secondAttribute="centerY" id="DiB-dT-T4o"/>
                             <constraint firstItem="twJ-da-si6" firstAttribute="top" secondItem="fvf-N2-TaA" secondAttribute="top" constant="20" id="F2q-vt-MwK"/>
                             <constraint firstItem="HMT-JJ-COl" firstAttribute="top" secondItem="twJ-da-si6" secondAttribute="bottom" constant="70" id="IPc-Xf-0C9"/>
                             <constraint firstItem="twJ-da-si6" firstAttribute="centerX" secondItem="hxZ-HD-MT5" secondAttribute="centerX" id="hRw-lN-i3E"/>
-                            <constraint firstItem="Cdg-2s-6zi" firstAttribute="centerX" secondItem="hxZ-HD-MT5" secondAttribute="centerX" id="sxn-I4-QBf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fvf-N2-TaA"/>
                         <variation key="default">
@@ -104,7 +99,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Taux de change" image="eurosign.square" catalog="system" id="k6y-5J-cgC"/>
                     <connections>
-                        <outlet property="activityIndicatorView" destination="Cdg-2s-6zi" id="gcF-Pt-1Ew"/>
                         <outlet property="dollarTextField" destination="9MV-5j-keq" id="A0e-QT-v7g"/>
                         <outlet property="euroTextField" destination="nK8-Pp-VsV" id="5tz-wp-NoR"/>
                     </connections>
@@ -116,7 +110,7 @@
         <!--Traduction-->
         <scene sceneID="UOz-Kf-NXn">
             <objects>
-                <viewController id="70P-qB-ZOE" sceneMemberID="viewController">
+                <viewController id="70P-qB-ZOE" customClass="TranslationViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mxw-tk-MxT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,6 +142,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="70P-qB-ZOE" id="nw6-WR-XOM"/>
+                                                </connections>
                                             </textView>
                                         </subviews>
                                     </stackView>
@@ -165,7 +162,7 @@
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.4823529411764706" green="0.40392156862745099" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartQuotesType="yes"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                 </userDefinedRuntimeAttributes>
@@ -207,6 +204,10 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Traduction" image="text.bubble" catalog="system" id="Vqg-Ws-3Tz"/>
+                    <connections>
+                        <outlet property="englishTextField" destination="2q7-gw-i6P" id="7Zi-LK-BaX"/>
+                        <outlet property="frenchTextField" destination="9f4-sZ-Hcv" id="9Si-wv-OzM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8M-pP-ErX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,8 +233,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LmA-ro-uaf">
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="61.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTB-K9-uIu">
-                                                <rect key="frame" x="3.5" y="0.0" width="85.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTB-K9-uIu">
+                                                <rect key="frame" x="24" y="0.0" width="44" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -255,8 +256,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NI3-7U-IY5">
                                         <rect key="frame" x="0.0" y="161.5" width="92" height="61.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8J-mX-MH7">
-                                                <rect key="frame" x="24" y="0.0" width="44" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8J-mX-MH7">
+                                                <rect key="frame" x="3.5" y="0.0" width="85.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -278,12 +279,17 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" spacing="150"/>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Udk-lP-aHl">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.86274509803921573" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2cM-Jh-c96" firstAttribute="top" secondItem="5TL-wK-jZa" secondAttribute="top" constant="20" id="E3o-Af-fw0"/>
                             <constraint firstItem="zU2-4E-U7C" firstAttribute="centerY" secondItem="GE0-G9-9he" secondAttribute="centerY" id="LPu-n2-dhm"/>
                             <constraint firstItem="2cM-Jh-c96" firstAttribute="centerX" secondItem="GE0-G9-9he" secondAttribute="centerX" id="b9f-NJ-RtX"/>
+                            <constraint firstItem="Udk-lP-aHl" firstAttribute="centerY" secondItem="GE0-G9-9he" secondAttribute="centerY" id="rR6-I7-EkL"/>
+                            <constraint firstItem="Udk-lP-aHl" firstAttribute="centerX" secondItem="GE0-G9-9he" secondAttribute="centerX" id="udy-HM-qaP"/>
                             <constraint firstItem="zU2-4E-U7C" firstAttribute="centerX" secondItem="GE0-G9-9he" secondAttribute="centerX" id="zA2-Pw-5JV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5TL-wK-jZa"/>

@@ -10,6 +10,9 @@
 		630CF58623BBA1BF004FB4EA /* FixerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF58523BBA1BF004FB4EA /* FixerAPI.swift */; };
 		630CF58923BBA2EA004FB4EA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 630CF58823BBA2EA004FB4EA /* Alamofire */; };
 		630CF58C23BBAA8A004FB4EA /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 630CF58B23BBAA8A004FB4EA /* SwiftyJSON */; };
+		6336AC1723BCD2B2009233E6 /* CloudTranslationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336AC1623BCD2B2009233E6 /* CloudTranslationAPI.swift */; };
+		6336AC1923BCD556009233E6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336AC1823BCD556009233E6 /* API.swift */; };
+		6336AC1B23BCE658009233E6 /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336AC1A23BCE658009233E6 /* TranslationViewController.swift */; };
 		6382189D23BA3E8400346B11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382189C23BA3E8400346B11 /* AppDelegate.swift */; };
 		6382189F23BA3E8400346B11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382189E23BA3E8400346B11 /* SceneDelegate.swift */; };
 		638218A123BA3E8400346B11 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638218A023BA3E8400346B11 /* RateViewController.swift */; };
@@ -32,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		630CF58523BBA1BF004FB4EA /* FixerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerAPI.swift; sourceTree = "<group>"; };
+		6336AC1623BCD2B2009233E6 /* CloudTranslationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTranslationAPI.swift; sourceTree = "<group>"; };
+		6336AC1823BCD556009233E6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6336AC1A23BCE658009233E6 /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
 		6382189923BA3E8400346B11 /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6382189C23BA3E8400346B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6382189E23BA3E8400346B11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				638218A023BA3E8400346B11 /* RateViewController.swift */,
+				6336AC1A23BCE658009233E6 /* TranslationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -95,7 +102,9 @@
 		636778D223BA6E510010D0B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6336AC1823BCD556009233E6 /* API.swift */,
 				630CF58523BBA1BF004FB4EA /* FixerAPI.swift */,
+				6336AC1623BCD2B2009233E6 /* CloudTranslationAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,9 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				638218A123BA3E8400346B11 /* RateViewController.swift in Sources */,
+				6336AC1B23BCE658009233E6 /* TranslationViewController.swift in Sources */,
 				630CF58623BBA1BF004FB4EA /* FixerAPI.swift in Sources */,
 				6382189D23BA3E8400346B11 /* AppDelegate.swift in Sources */,
 				6382189F23BA3E8400346B11 /* SceneDelegate.swift in Sources */,
+				6336AC1923BCD556009233E6 /* API.swift in Sources */,
+				6336AC1723BCD2B2009233E6 /* CloudTranslationAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

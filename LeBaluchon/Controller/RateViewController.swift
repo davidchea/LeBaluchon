@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class RateViewController: UIViewController {
     
@@ -15,20 +14,16 @@ class RateViewController: UIViewController {
     
     @IBOutlet weak var euroTextField: UITextField!
     @IBOutlet weak var dollarTextField: UITextField!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     // MARK: - Action
     
     @IBAction func euroEditing() {
-        activityIndicatorView.startAnimating()
-        FixerAPI.shared.getRateFromEuroToDollar(updateDollarTextField(_:))
+        FixerAPI.shared.getRateFromEuroToDollar(completionHandler: updateDollarTextField(_:))
     }
     
     // MARK: - Method
     
     private func updateDollarTextField(_ rate: Double) {
-        activityIndicatorView.stopAnimating()
-        
         guard let euro = Double(euroTextField.text!) else {
             dollarTextField.text = ""
             return
