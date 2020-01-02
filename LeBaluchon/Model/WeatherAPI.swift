@@ -1,27 +1,25 @@
 //
-//  FixerAPI.swift
+//  WeatherAPI.swift
 //  LeBaluchon
 //
-//  Created by David Chea on 31/12/2019.
-//  Copyright © 2019 David Chea. All rights reserved.
+//  Created by David Chea on 01/01/2020.
+//  Copyright © 2020 David Chea. All rights reserved.
 //
 
 import Alamofire
 import SwiftyJSON
 
-class FixerAPI: API {
+class WeatherAPI: API {
     
     // MARK: - Properties
     
-    static let shared = FixerAPI()
-    private let baseEndpoint = "http://data.fixer.io/api/latest?access_key=363596384dd4e74590948b5c03bc8784"
+    static let shared = WeatherAPI()
+    private let baseEndpoint = "https://api.openweathermap.org/data/2.5/weather?appid=8d38e085c21cc46d8d4acdc6787d78d4"
     
     // MARK: - Method
     
-    func getRateFromEuroToDollar(completionHandler: @escaping (JSON, String) -> Void) {
-        cancelAllTasks()
-        
-        let parameters = ["base": "EUR", "symbols": "USD"]
+    func getWeatherByCity(_ city: String, completionHandler: @escaping (JSON, String) -> Void) {
+        let parameters = ["q": city, "units": "metric"]
         Alamofire.request(baseEndpoint, parameters: parameters).responseJSON { dataResponse in
             guard dataResponse.error == nil else {
                 completionHandler(JSON.null, dataResponse.error!.localizedDescription)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class RateViewController: UIViewController {
     
@@ -18,12 +19,12 @@ class RateViewController: UIViewController {
     // MARK: - Action
     
     @IBAction func euroEditing() {
-        FixerAPI.shared.getRateFromEuroToDollar(completionHandler: updateDollarTextField(rate:error:))
+        FixerAPI.shared.getRateFromEuroToDollar(completionHandler: updateDollarTextField(_:error:))
     }
     
     // MARK: - Method
     
-    private func updateDollarTextField(rate: Double, error: String) {
+    private func updateDollarTextField(_ json: JSON, error: String) {
         guard error == "" else {
             presentErrorAlert(message: error)
             return
@@ -34,7 +35,8 @@ class RateViewController: UIViewController {
             return
         }
         
-        let dollar = euro * rate
+        let USDRate = json["rates"]["USD"].doubleValue
+        let dollar = euro * USDRate
         dollarTextField.text = dollar.description
     }
 }

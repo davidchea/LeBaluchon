@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class TranslationViewController: UIViewController {
     
@@ -17,12 +18,13 @@ class TranslationViewController: UIViewController {
     
     // MARK: - Method
     
-    private func updateEnglishTextField(translatedText: String, error: String) {
+    private func updateEnglishTextField(_ json: JSON, error: String) {
         guard error == "" else {
             presentErrorAlert(message: error)
             return
         }
         
+        let translatedText = json["data"]["translations"][0]["translatedText"].stringValue
         englishTextField.text = translatedText
     }
 }
@@ -32,6 +34,6 @@ extension TranslationViewController: UITextViewDelegate {
     // MARK: - Delegate method
     
     func textViewDidChange(_ textView: UITextView) {
-        CloudTranslationAPI.shared.getTranslationToEnglish(textView.text, completionHandler: updateEnglishTextField(translatedText:error:))
+        CloudTranslationAPI.shared.getTranslationToEnglish(textView.text, completionHandler: updateEnglishTextField(_:error:))
     }
 }
