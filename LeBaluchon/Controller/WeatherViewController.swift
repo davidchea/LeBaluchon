@@ -23,22 +23,24 @@ class WeatherViewController: UIViewController {
     
     // MARK: - Life cycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        activityIndicatorView.startAnimating()
         getWeather()
     }
     
     // MARK: - Methods
     
     private func getWeather() {
-        WeatherAPI.shared.getWeather("2988507,5128581", completionHandler: updateLabels(_:error:))
+        WeatherAPI.shared.getWeather("2988507,5128581", completionHandler: updateLabels(_:))
     }
     
-    private func updateLabels(_ json: JSON, error: String) {
+    private func updateLabels(_ json: JSON) {
         activityIndicatorView.stopAnimating()
         
-        guard error == "" else {
-            presentErrorAlert(message: error)
+        guard json["error"] == JSON.null else {
+            presentErrorAlert(message: json["error"].stringValue)
             return
         }
         

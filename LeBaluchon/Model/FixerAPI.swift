@@ -18,18 +18,18 @@ class FixerAPI: API {
     
     // MARK: - Method
     
-    func getRateFromEuroToDollar(completionHandler: @escaping (JSON, String) -> Void) {
+    func getRateFromEuroToDollar(completionHandler: @escaping (JSON) -> Void) {
         cancelAllTasks()
         
         let parameters = ["base": "EUR", "symbols": "USD"]
         Alamofire.request(baseEndpoint, parameters: parameters).responseJSON { dataResponse in
             guard dataResponse.error == nil else {
-                completionHandler(JSON.null, dataResponse.error!.localizedDescription)
+                completionHandler(JSON(["error": dataResponse.error!.localizedDescription]))
                 return
             }
             
             let json = try! JSON(data: dataResponse.data!)
-            completionHandler(json, "")
+            completionHandler(json)
         }
     }
 }

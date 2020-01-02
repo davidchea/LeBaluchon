@@ -18,16 +18,18 @@ class WeatherAPI: API {
     
     // MARK: - Method
     
-    func getWeather(_ cityIDs: String, completionHandler: @escaping (JSON, String) -> Void) {
+    func getWeather(_ cityIDs: String, completionHandler: @escaping (JSON) -> Void) {
+        cancelAllTasks()
+        
         let parameters = ["id": cityIDs, "units": "metric"]
         Alamofire.request(baseEndpoint, parameters: parameters).responseJSON { dataResponse in
             guard dataResponse.error == nil else {
-                completionHandler(JSON.null, dataResponse.error!.localizedDescription)
+                completionHandler(JSON(["error": dataResponse.error!.localizedDescription]))
                 return
             }
             
             let json = try! JSON(data: dataResponse.data!)
-            completionHandler(json, "")
+            completionHandler(json)
         }
     }
 }

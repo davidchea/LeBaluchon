@@ -19,14 +19,14 @@ class RateViewController: UIViewController {
     // MARK: - Action
     
     @IBAction func euroEditing() {
-        FixerAPI.shared.getRateFromEuroToDollar(completionHandler: updateDollarTextField(_:error:))
+        FixerAPI.shared.getRateFromEuroToDollar(completionHandler: updateDollarTextField(_:))
     }
     
     // MARK: - Method
     
-    private func updateDollarTextField(_ json: JSON, error: String) {
-        guard error == "" else {
-            presentErrorAlert(message: error)
+    private func updateDollarTextField(_ json: JSON) {
+        guard json["error"] == JSON.null else {
+            presentErrorAlert(message: json["error"].stringValue)
             return
         }
         

@@ -18,9 +18,9 @@ class TranslationViewController: UIViewController {
     
     // MARK: - Method
     
-    private func updateEnglishTextField(_ json: JSON, error: String) {
-        guard error == "" else {
-            presentErrorAlert(message: error)
+    private func updateEnglishTextField(_ json: JSON) {
+        guard json["error"] == JSON.null else {
+            presentErrorAlert(message: json["error"].stringValue)
             return
         }
         
@@ -34,6 +34,6 @@ extension TranslationViewController: UITextViewDelegate {
     // MARK: - Delegate method
     
     func textViewDidChange(_ textView: UITextView) {
-        CloudTranslationAPI.shared.getTranslationToEnglish(textView.text, completionHandler: updateEnglishTextField(_:error:))
+        CloudTranslationAPI.shared.getTranslationToEnglish(textView.text, completionHandler: updateEnglishTextField(_:))
     }
 }

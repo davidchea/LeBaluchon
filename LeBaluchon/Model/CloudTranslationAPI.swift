@@ -18,18 +18,18 @@ class CloudTranslationAPI: API {
     
     // MARK: - Method
     
-    func getTranslationToEnglish(_ text: String, completionHandler: @escaping (JSON, String) -> Void) {
+    func getTranslationToEnglish(_ text: String, completionHandler: @escaping (JSON) -> Void) {
         cancelAllTasks()
         
         let parameters = ["q": text, "target": "en"]
         Alamofire.request(baseEndpoint, parameters: parameters).responseJSON { dataResponse in
             guard dataResponse.error == nil else {
-                completionHandler(JSON.null, dataResponse.error!.localizedDescription)
+                completionHandler(JSON(["error": dataResponse.error!.localizedDescription]))
                 return
             }
             
             let json = try! JSON(data: dataResponse.data!)
-            completionHandler(json, "")
+            completionHandler(json)
         }
     }
 }
