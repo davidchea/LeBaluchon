@@ -31,8 +31,7 @@ class WeatherViewController: UIViewController {
     // MARK: - Methods
     
     private func getWeather() {
-        WeatherAPI.shared.getWeatherByCity("Paris", completionHandler: updateLabels(_:error:))
-        WeatherAPI.shared.getWeatherByCity("New York", completionHandler: updateLabels(_:error:))
+        WeatherAPI.shared.getWeather("2988507,5128581", completionHandler: updateLabels(_:error:))
     }
     
     private func updateLabels(_ json: JSON, error: String) {
@@ -43,19 +42,10 @@ class WeatherViewController: UIViewController {
             return
         }
         
-        let city = json["name"].stringValue
-        let temperature = json["main"]["temp"].intValue
-        let weather = json["weather"][0]["main"].stringValue
+        parisTemperature.text = String(json["list"][0]["main"]["temp"].intValue) + " °C"
+        parisWeather.text = json["list"][0]["weather"][0]["main"].stringValue
         
-        switch city {
-        case "Paris":
-            parisTemperature.text = temperature.description + " °C"
-            parisWeather.text = weather
-        case "New York":
-            newYorkTemperature.text = temperature.description + " °C"
-            newYorkWeather.text = weather
-        default:
-            break
-        }
+        newYorkTemperature.text = String(json["list"][1]["main"]["temp"].intValue) + " °C"
+        newYorkWeather.text = json["list"][1]["weather"][0]["main"].stringValue
     }
 }

@@ -14,12 +14,12 @@ class WeatherAPI: API {
     // MARK: - Properties
     
     static let shared = WeatherAPI()
-    private let baseEndpoint = "https://api.openweathermap.org/data/2.5/weather?appid=8d38e085c21cc46d8d4acdc6787d78d4"
+    private let baseEndpoint = "https://api.openweathermap.org/data/2.5/group?appid=8d38e085c21cc46d8d4acdc6787d78d4"
     
     // MARK: - Method
     
-    func getWeatherByCity(_ city: String, completionHandler: @escaping (JSON, String) -> Void) {
-        let parameters = ["q": city, "units": "metric"]
+    func getWeather(_ cityIDs: String, completionHandler: @escaping (JSON, String) -> Void) {
+        let parameters = ["id": cityIDs, "units": "metric"]
         Alamofire.request(baseEndpoint, parameters: parameters).responseJSON { dataResponse in
             guard dataResponse.error == nil else {
                 completionHandler(JSON.null, dataResponse.error!.localizedDescription)
