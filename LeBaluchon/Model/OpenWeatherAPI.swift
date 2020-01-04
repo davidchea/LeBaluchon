@@ -1,5 +1,5 @@
 //
-//  WeatherAPI.swift
+//  OpenWeatherAPI.swift
 //  LeBaluchon
 //
 //  Created by David Chea on 01/01/2020.
@@ -9,11 +9,11 @@
 import Alamofire
 import SwiftyJSON
 
-class WeatherAPI: API {
+class OpenWeatherAPI: API {
     
     // MARK: - Properties
     
-    static let shared = WeatherAPI()
+    static let shared = OpenWeatherAPI()
     private let baseEndpoint = "https://api.openweathermap.org/data/2.5/group?appid=8d38e085c21cc46d8d4acdc6787d78d4"
     
     // MARK: - Method

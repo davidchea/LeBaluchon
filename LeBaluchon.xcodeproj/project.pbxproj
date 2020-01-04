@@ -22,7 +22,7 @@
 		638218B423BA3E8600346B11 /* LeBaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638218B323BA3E8600346B11 /* LeBaluchonTests.swift */; };
 		63BD64F723BA81C8008937AB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63BD64F623BA81C8008937AB /* .swiftlint.yml */; };
 		63BD64F823BA81C8008937AB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63BD64F623BA81C8008937AB /* .swiftlint.yml */; };
-		63D03A0D23BD59D2006B107B /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D03A0C23BD59D2006B107B /* WeatherAPI.swift */; };
+		63D03A0D23BD59D2006B107B /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D03A0C23BD59D2006B107B /* OpenWeatherAPI.swift */; };
 		63D03A0F23BD6291006B107B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D03A0E23BD6291006B107B /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		6336AC1823BCD556009233E6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		6336AC1A23BCE658009233E6 /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
 		634F1A4823BD0F94009037A9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		6382189923BA3E8400346B11 /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6382189923BA3E8400346B11 /* Le Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Le Baluchon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6382189C23BA3E8400346B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6382189E23BA3E8400346B11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		638218A023BA3E8400346B11 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		638218B323BA3E8600346B11 /* LeBaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBaluchonTests.swift; sourceTree = "<group>"; };
 		638218B523BA3E8600346B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BD64F623BA81C8008937AB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		63D03A0C23BD59D2006B107B /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		63D03A0C23BD59D2006B107B /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
 		63D03A0E23BD6291006B107B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +120,7 @@
 				6336AC1823BCD556009233E6 /* API.swift */,
 				630CF58523BBA1BF004FB4EA /* FixerAPI.swift */,
 				6336AC1623BCD2B2009233E6 /* CloudTranslationAPI.swift */,
-				63D03A0C23BD59D2006B107B /* WeatherAPI.swift */,
+				63D03A0C23BD59D2006B107B /* OpenWeatherAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,7 +138,7 @@
 		6382189A23BA3E8400346B11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6382189923BA3E8400346B11 /* LeBaluchon.app */,
+				6382189923BA3E8400346B11 /* Le Baluchon.app */,
 				638218AF23BA3E8600346B11 /* LeBaluchonTests.xctest */,
 			);
 			name = Products;
@@ -187,7 +187,7 @@
 				630CF58B23BBAA8A004FB4EA /* SwiftyJSON */,
 			);
 			productName = LeBaluchon;
-			productReference = 6382189923BA3E8400346B11 /* LeBaluchon.app */;
+			productReference = 6382189923BA3E8400346B11 /* Le Baluchon.app */;
 			productType = "com.apple.product-type.application";
 		};
 		638218AE23BA3E8600346B11 /* LeBaluchonTests */ = {
@@ -297,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63D03A0D23BD59D2006B107B /* WeatherAPI.swift in Sources */,
+				63D03A0D23BD59D2006B107B /* OpenWeatherAPI.swift in Sources */,
 				63D03A0F23BD6291006B107B /* WeatherViewController.swift in Sources */,
 				638218A123BA3E8400346B11 /* RateViewController.swift in Sources */,
 				6336AC1B23BCE658009233E6 /* TranslationViewController.swift in Sources */,
@@ -466,7 +466,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidchea.LeBaluchon;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Le Baluchon";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -484,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.davidchea.LeBaluchon;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Le Baluchon";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -508,7 +508,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeBaluchon.app/LeBaluchon";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Le Baluchon.app/Le Baluchon";
 			};
 			name = Debug;
 		};
@@ -530,7 +530,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeBaluchon.app/LeBaluchon";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Le Baluchon.app/Le Baluchon";
 			};
 			name = Release;
 		};

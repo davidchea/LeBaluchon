@@ -33,7 +33,7 @@ class WeatherViewController: UIViewController {
     // MARK: - Methods
     
     private func getWeather() {
-        WeatherAPI.shared.getWeather("2988507,5128581", completionHandler: updateLabels(_:))
+        OpenWeatherAPI.shared.getWeather("2988507,5128581", completionHandler: updateLabels(_:))
     }
     
     private func updateLabels(_ json: JSON) {
