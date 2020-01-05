@@ -16,6 +16,13 @@ class RateViewController: UIViewController {
     @IBOutlet weak var euroTextField: UITextField!
     @IBOutlet weak var dollarTextField: UITextField!
     
+    // MARK: - Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addTapGestureRecognizer()
+    }
+    
     // MARK: - Action
     
     @IBAction func euroEditing() {

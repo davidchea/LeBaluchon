@@ -16,6 +16,13 @@ class TranslationViewController: UIViewController {
     @IBOutlet weak var frenchTextField: UITextView!
     @IBOutlet weak var englishTextField: UITextView!
     
+    // MARK: - Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addTapGestureRecognizer()
+    }
+    
     // MARK: - Method
     
     private func updateEnglishTextField(_ json: JSON) {

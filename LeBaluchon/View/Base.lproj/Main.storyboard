@@ -10,7 +10,7 @@
         <!--Exchange Rate-->
         <scene sceneID="4Vf-Js-9OM">
             <objects>
-                <viewController id="TGy-Om-gL7" customClass="RateViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TGy-Om-gL7" customClass="RateViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hxZ-HD-MT5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +110,7 @@
         <!--Translation-->
         <scene sceneID="UOz-Kf-NXn">
             <objects>
-                <viewController id="70P-qB-ZOE" customClass="TranslationViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="70P-qB-ZOE" customClass="TranslationViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mxw-tk-MxT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,7 @@
                                                 <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                 </userDefinedRuntimeAttributes>
@@ -216,7 +216,7 @@
         <!--Weather-->
         <scene sceneID="Cg6-fE-yfp">
             <objects>
-                <viewController id="jRB-7z-gbv" customClass="WeatherViewController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jRB-7z-gbv" customClass="WeatherViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GE0-G9-9he">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
