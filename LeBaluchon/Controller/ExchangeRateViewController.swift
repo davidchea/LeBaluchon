@@ -1,5 +1,5 @@
 //
-//  RateViewController.swift
+//  ExchangeRateViewController.swift
 //  LeBaluchon
 //
 //  Created by David Chea on 30/12/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class RateViewController: UIViewController {
+class ExchangeRateViewController: UIViewController {
     
     // MARK: - Outlets
     

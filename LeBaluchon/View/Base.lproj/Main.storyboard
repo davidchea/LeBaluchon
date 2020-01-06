@@ -10,7 +10,7 @@
         <!--Exchange Rate-->
         <scene sceneID="4Vf-Js-9OM">
             <objects>
-                <viewController id="TGy-Om-gL7" customClass="RateViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TGy-Om-gL7" customClass="ExchangeRateViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hxZ-HD-MT5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
