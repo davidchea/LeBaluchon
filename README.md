@@ -1,6 +1,6 @@
 # Le Baluchon
 
-**Le Baluchon** allows users to get the exchange rate from euro to dollar using [Fixer API](https://fixer.io/), translate from French to English using [Cloud Translation API](https://cloud.google.com/ml-onramp/translation) and get Paris' and New York's weather using [OpenWeather API](https://openweathermap.org/current).
+**Le Baluchon** allows users to get the exchange rate from euro to dollar using [Fixer API](https://fixer.io/), translate from French to English using [Cloud Translation API](https://cloud.google.com/translate/docs/) and get Paris' and New York's weather using [OpenWeather API](https://openweathermap.org/current).
 
 This project is part of the [OpenClassrooms iOS Developer Path](https://openclassrooms.com/en/paths/74-ios-developer).
 
